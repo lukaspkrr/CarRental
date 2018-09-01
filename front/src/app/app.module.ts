@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing';
+import { MaterializeModule } from 'angular2-materialize';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
