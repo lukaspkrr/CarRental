@@ -11,10 +11,10 @@ import { FuncionarioComponent } from './funcionario/funcionario.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'aluguel', component: AluguelComponent, loadChildren: 'app/aluguel/aluguel.module#AluguelModule' },
-  { path: 'carro', component: CarroComponent, loadChildren: 'app/carro/carro.module#CarroModule' },
-  { path: 'cliente', component: ClienteComponent, loadChildren: 'app/cliente/cliente.module#ClienteModule'},
-  { path: 'funcionario', component: FuncionarioComponent, loadChildren: 'app/funcionario/funcionario.module#FuncionarioModule'}
+  { path: 'aluguel', component: AluguelComponent},
+  { path: 'carro', component: CarroComponent},
+  { path: 'cliente', component: ClienteComponent},
+  { path: 'funcionario', component: FuncionarioComponent}
 ];
 
 
