@@ -12,6 +12,7 @@ import { CarroModule } from './carro/carro.module';
 import { AluguelModule } from './aluguel/aluguel.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { FuncionarioModule } from './funcionario/funcionario.module';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FuncionarioModule } from './funcionario/funcionario.module';
     HomeComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     AppRoutingModule,
     MaterializeModule,

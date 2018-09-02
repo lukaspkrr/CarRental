@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ClienteRoutingModule } from './cliente.routing.module';
 import { ClienteComponent } from './cliente.component';
@@ -9,7 +10,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 @NgModule({
   imports: [
     CommonModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    FormsModule
   ],
   declarations: [
     ClienteComponent,

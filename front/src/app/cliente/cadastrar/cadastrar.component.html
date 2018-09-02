@@ -1,3 +1,37 @@
-<p>
-  cadastrar works!
-</p>
+<div class="container">
+    <div class="row">
+      <form class="col s12">
+        <div class="card-panel  grey darken-1">
+          <form #formCliente="ngForm" (ngSubmit)="salvarCliente(formCliente)">
+            <div class="row">
+              <div class="input-field col s3">
+                <input [(ngModel)]="cliente.nome" name="nome" id="first_name" type="text" class="validate">
+                <label for="first_name">Modelo</label>
+              </div>
+              <div class="input-field col s3">
+                <input [(ngModel)]="cliente.telefone" name="telefone" id="last_name" type="text" class="validate">
+                <label for="last_name">Placa</label>
+              </div>
+              <div class="input-field col s3">
+                <input [(ngModel)]="cliente.email" name="email" id="first_name" type="text" class="validate">
+                <label for="first_name">Ano</label>
+              </div>
+              <div>
+                <div class="input-field col s3">
+                  <input [(ngModel)]="cliente.cpf_cnpj" name="cpf_cnpj" id="first_name" type="text" class="validate">
+                  <label for="first_name">Renavam</label>
+                </div>
+              </div>
+            </div>
+  
+            <div class="row">
+            <button class="btn waves-effect waves-light #e65100 orange darken-4 right" type="submit" name="action">Cadastrar cliente
+                <i class="material-icons right">add</i>
+              </button>
+              </div>
+            
+          </form>
+        </div>
+      </form>
+    </div>
+  </div>
