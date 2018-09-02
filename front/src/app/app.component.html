@@ -1,12 +1,14 @@
 <nav>
     <div class="nav-wrapper #e65100 orange darken-4">
-      <a href="#" class="brand-logo">Logo</a>
+    <a [routerLink]="['aluguel']" class="brand-logo">LocADORA <i class="large material-icons">directions_car</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a [routerLink]="['aluguel']">Aluguel</a></li>
-        <li><a [routerLink]="['carro']">automóveis</a></li>
+        <li><a [routerLink]="['carro']">Veículos</a></li>
         <li><a [routerLink]="['cliente']">Clientes</a></li>
         <li><a [routerLink]="['funcionario']">Funcionários</a></li>
+        <li><a href="https://store-images.microsoft.com/image/apps.59682.9007199266251377.11eabd37-a0d4-4a98-a6dc-6cd4ec6a02e3.33ff95a5-12b9-4036-9843-957c1b44cdd8?mode=crop&q=90&h=270&w=270&format=jpg&background=transparent">Ajuda, por favor!</a></li>
       </ul>
     </div>
   </nav>
+
 <router-outlet></router-outlet>
