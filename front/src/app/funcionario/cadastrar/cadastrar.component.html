@@ -1,3 +1,37 @@
-<p>
-  cadastrar works!
-</p>
+<div class="container">
+    <div class="row">
+      <form class="col s12">
+        <div class="card-panel  grey darken-1">
+          <form #formFuncionario="ngForm" (ngSubmit)="salvarFuncionario(formFuncionario)">
+            <div class="row">
+              <div class="input-field col s3">
+                <input [(ngModel)]="funcionario.modelo" name="modelo" id="first_name" type="text" class="validate">
+                <label for="first_name">Modelo</label>
+              </div>
+              <div class="input-field col s3">
+                <input [(ngModel)]="funcionario.placa" name="placa" id="last_name" type="text" class="validate">
+                <label for="last_name">Placa</label>
+              </div>
+              <div class="input-field col s3">
+                <input [(ngModel)]="funcionario.ano" name="ano" id="first_name" type="text" class="validate">
+                <label for="first_name">Ano</label>
+              </div>
+              <div>
+                <div class="input-field col s3">
+                  <input [(ngModel)]="funcionario.renavam" name="renavam" id="first_name" type="text" class="validate">
+                  <label for="first_name">Renavam</label>
+                </div>
+              </div>
+            </div>
+  
+            <div class="row">
+            <button class="btn waves-effect waves-light #e65100 orange darken-4 right" type="submit" name="action">Cadastrar Funcionario
+                <i class="material-icons right">add</i>
+              </button>
+              </div>
+            
+          </form>
+        </div>
+      </form>
+    </div>
+  </div>
