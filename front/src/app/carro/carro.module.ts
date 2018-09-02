@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CarroComponent } from './carro.component';
 import { CarroRoutingModule } from './carro.routing.module';
+
+import { CarroComponent } from './carro.component';
 import { ListarComponent } from './listar/listar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 
@@ -15,9 +16,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
    CarroComponent,
    CadastrarComponent,
    ListarComponent
-  ],
-  exports: [
-   CarroComponent
   ]
+
 })
 export class CarroModule { }

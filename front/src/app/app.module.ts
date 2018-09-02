@@ -2,30 +2,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AppRoutingModule } from './app.routing';
 
 import { MaterializeModule } from 'angular2-materialize';
 
-import { AluguelModule } from './aluguel/aluguel.module';
-import { FuncionarioModule } from './funcionario/funcionario.module';
-import { ClienteModule } from './cliente/cliente.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app.routing';
 import { CarroModule } from './carro/carro.module';
+import { AluguelModule } from './aluguel/aluguel.module';
+import { ClienteModule } from './cliente/cliente.module';
+import { FuncionarioModule } from './funcionario/funcionario.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterializeModule,
-    AluguelModule,
     CarroModule,
-    FuncionarioModule,
-    ClienteModule
+    AluguelModule,
+    ClienteModule,
+    FuncionarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ListarComponent } from './listar/listar.component';
-import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CarroComponent } from './carro.component';
 
 
