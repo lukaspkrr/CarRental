@@ -5,7 +5,7 @@ import { AluguelComponent } from './aluguel.component';
 
 
 const AluguelRoutes: Routes = [
-  { path: '', component: AluguelComponent }
+  { path: 'aluguel', component: AluguelComponent }
 ];
 
 @NgModule({
