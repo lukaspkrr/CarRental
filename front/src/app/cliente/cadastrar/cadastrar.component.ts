@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -14,8 +15,18 @@ export class CadastrarComponent implements OnInit {
     cpf_cnpj: ''
   };
 
+  constructor(private clienteService: ClienteService) { }
 
-  constructor() { }
+  salvarCliente(formCliente) {
+    this.clienteService.postCliente(formCliente.value).subscribe(
+      res => {
+        console.log(res);
+      },
+        erro => {
+        console.log(erro);
+      }
+    );
+  }
 
   ngOnInit() {
   }
