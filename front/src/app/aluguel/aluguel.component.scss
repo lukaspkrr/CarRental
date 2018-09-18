@@ -8,6 +8,15 @@ img.carros {
 
 div.carousel.carousel-slider.center
 div.carousel-item.white-text
+img.indisponivel {
+    position: absolute;
+    width: 40%;
+    margin-top: -20px;
+    margin-left: -40%;
+}
+
+div.carousel.carousel-slider.center
+div.carousel-item.white-text
 div.statusCarro {
     border: solid 1px #e65100;
     padding: 0px 10px 0px 10px;

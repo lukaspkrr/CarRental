@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AluguelComponent } from './aluguel.component';
+import { AlugarComponent } from './alugar/alugar.component';
 
 
 const AluguelRoutes: Routes = [
-  { path: 'aluguel', component: AluguelComponent }
+  { path: '', component: AluguelComponent },
+  { path: 'alugar/:id', component: AlugarComponent }
 ];
 
 @NgModule({
