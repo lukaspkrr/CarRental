@@ -8,6 +8,7 @@ export class ClienteService {
   constructor(private http: HttpClient) { }
 
   cadastrarCliente(form) {
+    console.log('form', form);
     return this.http.post(`${LOCADORA_API}cliente`, form);
   }
 

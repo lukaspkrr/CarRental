@@ -11,9 +11,9 @@ export class CadastrarComponent implements OnInit {
 
   cliente = {
     nome: '',
-    telefone: '',
-    email: '',
-    cpf_cnpj: ''
+    cnh: '',
+    cpf: '',
+    cnpj: ''
   };
 
   newTelefones = [];
@@ -46,11 +46,11 @@ export class CadastrarComponent implements OnInit {
     form.value.telefone = this.newTelefones;
     form.value.email = this.newEmails;
     console.log(form.value);
-    this.clienteService.cadastrarCliente(form)
+    this.clienteService.cadastrarCliente(form.value)
     .subscribe(
       res => console.log(res),
-      erro => console.error(erro) 
-    )
+      erro => console.error(erro)
+    );
   }
 
   ngOnInit() {
