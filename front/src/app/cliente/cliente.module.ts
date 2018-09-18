@@ -6,6 +6,7 @@ import { ClienteRoutingModule } from './cliente.routing.module';
 import { ClienteComponent } from './cliente.component';
 import { ListarComponent } from './listar/listar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ClienteService } from './cliente.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,9 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
   ],
   exports: [
     ClienteComponent
+  ],
+  providers: [
+    ClienteService
   ]
 })
 export class ClienteModule { }

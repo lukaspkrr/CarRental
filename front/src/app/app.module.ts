@@ -10,13 +10,11 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app.routing';
-import { AluguelComponent } from './aluguel/aluguel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AluguelComponent
+    HomeComponent
   ],
   imports: [
     HttpClientModule,

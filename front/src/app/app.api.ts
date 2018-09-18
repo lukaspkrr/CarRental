@@ -1,2 +1,2 @@
-export const LOCADORA_API = '/api/v1/';
+export const LOCADORA_API = 'http://localhost/api/locadora/';
 

@@ -1,11 +1,12 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AluguelComponent } from './aluguel/aluguel.component';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes = [
-  { path: 'aluguel', component: AluguelComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'aluguel', loadChildren: 'app/aluguel/aluguel.module#AluguelModule' },
   { path: 'carro', loadChildren: 'app/carro/carro.module#CarroModule' },
   { path: 'cliente',  loadChildren: 'app/cliente/cliente.module#ClienteModule' },
   { path: 'funcionario',  loadChildren: 'app/funcionario/funcionario.module#FuncionarioModule'}

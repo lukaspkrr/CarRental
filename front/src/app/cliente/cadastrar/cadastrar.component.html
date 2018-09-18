@@ -1,37 +1,113 @@
 <div class="container">
-    <div class="row">
-      <form class="col s12">
-        <div class="card-panel  grey darken-1">
-          <form #formCliente="ngForm" (ngSubmit)="salvarCliente(formCliente)">
-            <div class="row">
-              <div class="input-field col s3">
-                <input [(ngModel)]="cliente.nome" name="nome" id="first_name" type="text" class="validate">
-                <label for="first_name">Nome</label>
-              </div>
-              <div class="input-field col s3">
-                <input [(ngModel)]="cliente.telefone" name="telefone" id="last_name" type="text" class="validate">
-                <label for="last_name">Telefone</label>
-              </div>
-              <div class="input-field col s3">
-                <input [(ngModel)]="cliente.email" name="email" id="first_name" type="text" class="validate">
-                <label for="first_name">E-mail</label>
-              </div>
-              <div>
-                <div class="input-field col s3">
-                  <input [(ngModel)]="cliente.cpf_cnpj" name="cpf_cnpj" id="first_name" type="text" class="validate">
-                  <label for="first_name">CNPJ</label>
-                </div>
-              </div>
+  <div class="row">
+    <form class="col s12">
+      <div class="card-panel">
+        <h5>ADICIONAR CLIENTE</h5>
+        <form #formCliente="ngForm" (ngSubmit)="salvarCliente(formCliente)">
+          <div class="row">
+            <div class="input-field col s3">
+              <input [(ngModel)]="cliente.nome" name="nome" type="text" class="validate">
+              <label for="first_name">Nome</label>
             </div>
-  
-            <div class="row">
-            <button class="btn waves-effect waves-light #e65100 orange darken-4 right" type="submit" name="action">Cadastrar cliente
-                <i class="material-icons right">add</i>
-              </button>
+            <!-- <p>
+              <label>
+                <input class="with-gap" name="group1" [(ngModel)]="cliente.id_tipo_cliente" type="radio" />
+                <span>Pessoa física</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input class="with-gap" name="group1" [(ngModel)]="cliente.id_tipo_cliente" type="radio" />
+                <span>Pessoa jurídica</span>
+              </label>
+            </p> -->
+            <div class="input-field col s3">
+              <input [(ngModel)]="cliente.cnh" name="cnh" type="text" class="validate">
+              <label for="first_name">CNH</label>
+            </div>
+            <div class="input-field col s3">
+              <input [(ngModel)]="cliente.cpf" name="cpf" type="text" class="validate">
+              <label for="first_name">CPF</label>
+            </div>
+            <div class="input-field col s3">
+              <input [(ngModel)]="cliente.cnpj" name="cnpj" type="text" class="validate">
+              <label for="first_name">CNPJ</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s6 card">
+                <span class="card-title">Telefones</span>
+              <div class="class card-content">
+                <form #formTelefone="ngForm" (ngSubmit)="salvarTelefone(formTelefone)">
+                  <div class="class col s10">
+                      <label for="first_name">Telefone</label>
+                      <input name="telefone" ngModel type="text" class="validate">
+                    </div>
+                    <div class="class col s2">
+                      <br>
+                        <button class="btn-floating  waves-effect waves-light #e65100 orange darken-4" type="submit"><i class="material-icons">add</i></button>
+                    </div>
+                  </form>
+                  <table class="striped" *ngIf="newTelefones.length > 0" >
+                    <thead>
+                      <tr>
+                        <th>Telefones</th>
+                        <th>Deletar</th>
+                      </tr>
+                    </thead>
+    
+                    <tbody>
+                      <tr *ngFor="let tel of newTelefones; index as i" >
+                        <td>{{tel.telefone}}</td>
+                        <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" (click)="deleteTelefone(i)"><i class="material-icons">delete</i></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
               </div>
-            
-          </form>
-        </div>
-      </form>
-    </div>
+
+            </div>
+            <div class="col s6 card">
+                <span class="card-title">Emails</span>
+              <div class="class card-content">
+                  <form #formEmail="ngForm" (ngSubmit)="salvarEmail(formEmail)">
+                  <div class="class col s10">
+                      <label for="first_name">Email</label>
+                      <input name="email" ngModel type="email" class="validate">
+                  </div>
+
+                  <div class="class col s2">
+                      <br>
+                      <button class="btn-floating  waves-effect waves-light #e65100 orange darken-4" type="submit"><i class="material-icons">add</i></button>
+                  </div>
+                </form>
+                  <table class="striped" *ngIf="newEmails.length > 0" >
+                    <thead>
+                      <tr>
+                        <th>E-mails</th>
+                        <th>Deletar</th>
+                      </tr>
+                    </thead>
+    
+                    <tbody>
+                      <tr *ngFor="let email of newEmails; index as i" >
+                        <td>{{email.email}}</td>
+                        <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" (click)="deleteEmail(i)"><i class="material-icons">delete</i></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn waves-effect waves-light #e65100 orange darken-4 right" type="submit" name="action">Cadastrar
+              cliente
+              <i class="material-icons right">add</i>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </form>
   </div>
+</div>
