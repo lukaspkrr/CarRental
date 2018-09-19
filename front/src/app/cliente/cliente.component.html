@@ -16,33 +16,21 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Item Name</th>
-                <th>Item Price</th>
+                <th>CPF</th>
+                <th>CNPJ</th>
                 <th>Ações</th>
               </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-                <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4"><i class="material-icons">search</i></a>
-                  <a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4"><i class="material-icons">delete</i></a></td>
-              </tr>
-              <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-                <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4"><i class="material-icons">search</i></a>
-                  <a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4"><i class="material-icons">delete</i></a></td>
-              </tr>
-              <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-                <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4"><i class="material-icons">search</i></a>
-                  <a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4"><i class="material-icons">delete</i></a></td>
+              <tr *ngFor="let cliente of clientes" >
+                <td>{{cliente?.nome}}</td>
+                <td>{{cliente?.cpf}}</td>
+                <td>{{cliente?.cnpj}}</td>
+                <td>
+                  <a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" [routerLink]="['edit', cliente?.id_cliente]"><i class="material-icons">search</i></a>
+                  <a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" (click)="deletarCliente(cliente?.id_cliente)"><i class="material-icons">delete</i></a>
+                </td>
               </tr>
 
             </tbody>

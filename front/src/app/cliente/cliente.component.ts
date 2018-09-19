@@ -1,3 +1,4 @@
+import { ClienteService } from './cliente.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor() { }
+  clientes: any = [];
+
+  constructor(private clienteService: ClienteService) { }
+
+  deletarCliente(idCliente) {
+    this.clienteService.deleteCliente(idCliente)
+    .subscribe(
+      res => this.getClientes(),
+      erro => console.error(erro)
+    );
+  }
+
+  getClientes() {
+    this.clienteService.clientes()
+    .subscribe(
+      res => this.clientes = res,
+      erro => console.error(erro)
+    );
+  }
 
   ngOnInit() {
+    this.getClientes();
   }
 
 }
