@@ -3,34 +3,33 @@
     <form class="col s12">
       <div class="card-panel">
         <h5>ADICIONAR CLIENTE</h5>
-        <form #formCliente="ngForm" (ngSubmit)="salvarCliente(formCliente)">
+        <form materialize #formCliente="ngForm" (ngSubmit)="salvarCliente(formCliente)">
           <div class="row">
             <div class="input-field col s3">
-              <input [(ngModel)]="cliente.nome" name="nome" type="text" class="validate">
-              <label for="first_name">Nome</label>
+              <p class="tipCliente">Tipo cliente</p>
+              <p class="inputRadio" (click)="mudarPessoa('Pessoa Física')">
+                <input type="radio" class="with-gap" name="group1" value="Pessoa Física" [(ngModel)]="cliente.id_tipo_cliente" />
+                <label for="nome">Pessoa Física</label>
+              </p>
+              <p class="inputRadio" (click)="mudarPessoa('Pessoa Jurídica')">
+                <input type="radio" class="with-gap" name="group1" value="Pessoa Jurídica" [(ngModel)]="cliente.id_tipo_cliente" />
+                <label for="first_name">Pessoa Jurídica</label>
+              </p>
             </div>
-            <!-- <p>
-              <label>
-                <input class="with-gap" name="group1" [(ngModel)]="cliente.id_tipo_cliente" type="radio" />
-                <span>Pessoa física</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input class="with-gap" name="group1" [(ngModel)]="cliente.id_tipo_cliente" type="radio" />
-                <span>Pessoa jurídica</span>
-              </label>
-            </p> -->
-            <div class="input-field col s3">
-              <input name="cnh" [(ngModel)]="cliente.cnh" type="text" class="validate">
+            <div class="input-field col s3" >
+                <input id="nome" [(ngModel)]="cliente.nome" name="nome" type="text" class="validate" placeholder="Nome">
+                <label for="nome">Nome</label>
+            </div>
+            <div class="input-field col s3" *ngIf="cliente.id_tipo_cliente === 'Pessoa Física'" >
+              <input name="cnh" [(ngModel)]="cliente.cnh" type="text" class="validate" placeholder="Cnh">
               <label for="first_name">CNH</label>
             </div>
-            <div class="input-field col s3">
-              <input name="cpf" [(ngModel)]="cliente.cpf" type="text" class="validate">
+            <div class="input-field col s3" *ngIf="cliente.id_tipo_cliente === 'Pessoa Física'" >
+              <input name="cpf" [(ngModel)]="cliente.cpf" type="text" class="validate" placeholder="Cpf">
               <label for="first_name">CPF</label>
             </div>
-            <div class="input-field col s3">
-              <input name="cnpj" [(ngModel)]="cliente.cnpj" type="text" class="validate">
+            <div class="input-field col s3" *ngIf="cliente.id_tipo_cliente === 'Pessoa Jurídica'" >
+              <input name="cnpj" [(ngModel)]="cliente.cnpj" type="text" class="validate" placeholder="Cnpj">
               <label for="first_name">CNPJ</label>
             </div>
           </div>
@@ -39,9 +38,10 @@
                 <span class="card-title">Telefones</span>
               <div class="class card-content">
                 <form #formTelefone="ngForm" (ngSubmit)="salvarTelefone(formTelefone)">
-                  <div class="class col s10">
-                      <label for="first_name">Telefone</label>
+                  <div class="input-field col s10">
+                      <i class="material-icons prefix">phone</i>
                       <input name="telefone" ngModel type="text" class="validate">
+                      <label for="first_name">Telefone</label>
                     </div>
                     <div class="class col s2">
                       <br>
@@ -70,9 +70,10 @@
                 <span class="card-title">Emails</span>
               <div class="class card-content">
                   <form #formEmail="ngForm" (ngSubmit)="salvarEmail(formEmail)">
-                  <div class="class col s10">
-                      <label for="first_name">Email</label>
+                  <div class="input-field col s10">
+                      <i class="material-icons prefix">email</i>
                       <input name="email" ngModel type="email" class="validate">
+                      <label for="first_name">Email</label>
                   </div>
 
                   <div class="class col s2">

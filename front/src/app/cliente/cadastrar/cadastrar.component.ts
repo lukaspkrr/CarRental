@@ -13,7 +13,8 @@ export class CadastrarComponent implements OnInit {
     nome: '',
     cnh: '',
     cpf: '',
-    cnpj: ''
+    cnpj: '',
+    id_tipo_cliente : 'Pessoa Física'
   };
 
   newTelefones = [];
@@ -40,6 +41,10 @@ export class CadastrarComponent implements OnInit {
 
   deleteEmail(index) {
     this.newEmails.splice(index, 1);
+  }
+
+  mudarPessoa(tipo) {
+    this.cliente.id_tipo_cliente = tipo;
   }
 
   salvarCliente(form: NgForm) {
