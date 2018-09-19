@@ -7,7 +7,7 @@ import { AlugarComponent } from './alugar/alugar.component';
 
 const AluguelRoutes: Routes = [
   { path: '', component: AluguelComponent },
-  { path: 'alugar/:id', component: AlugarComponent }
+  { path: 'alugar/:idAutomovel', component: AlugarComponent }
 ];
 
 @NgModule({

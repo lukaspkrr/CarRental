@@ -1,35 +1,40 @@
 <div class="container">
   <div class="row">
     <form class="col s12">
-      <div class="card-panel  grey darken-1">
-        <form #formCarro="ngForm" (ngSubmit)="salvarCarro(formCarro)">
+      <div class="card-panel">
+        <form #formAluguel="ngForm" (ngSubmit)="alugar(formAluguel)">
           <div class="row">
             <div class="input-field col s3">
-              <input [(ngModel)]="carro.modelo" name="modelo" id="first_name" type="text" class="validate">
+                <select [(ngModel)]="aluguel.id_cliente" materialize="material_select">
+                  <option value="" disabled selected>Selecione o cliente</option>
+                  <option *ngFor="let option of clientes" [value]="option.cpf">{{option.nome}}</option>
+                </select>
+              </div>
+            <div class="input-field col s3">
+              <input [(ngModel)]="aluguel.modelo" name="modelo" id="first_name" type="text" class="validate">
               <label for="first_name">Modelo</label>
             </div>
             <div class="input-field col s3">
-              <input [(ngModel)]="carro.placa" name="placa" id="last_name" type="text" class="validate">
+              <input [(ngModel)]="aluguel.placa" name="placa" id="last_name" type="text" class="validate">
               <label for="last_name">Placa</label>
             </div>
             <div class="input-field col s3">
-              <input [(ngModel)]="carro.ano" name="ano" id="first_name" type="text" class="validate">
+              <input [(ngModel)]="aluguel.ano" name="ano" id="first_name" type="text" class="validate">
               <label for="first_name">Ano</label>
             </div>
             <div>
               <div class="input-field col s3">
-                <input [(ngModel)]="carro.renavam" name="renavam" id="first_name" type="text" class="validate">
+                <input [(ngModel)]="aluguel.renavam" name="renavam" id="first_name" type="text" class="validate">
                 <label for="first_name">Renavam</label>
               </div>
             </div>
           </div>
 
           <div class="row">
-          <button class="btn waves-effect waves-light #e65100 orange darken-4 right" type="submit" name="action">Cadastrar Carro
-              <i class="material-icons right">add</i>
+            <button class="btn waves-effect waves-light #e65100 orange darken-4 right" type="submit" name="action">Fechar aluguel<i class="material-icons right">attach_money</i>
             </button>
-            </div>
-          
+          </div>
+
         </form>
       </div>
     </form>

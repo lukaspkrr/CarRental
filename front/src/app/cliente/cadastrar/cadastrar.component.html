@@ -3,35 +3,34 @@
     <form class="col s12">
       <div class="card-panel">
         <h5>ADICIONAR CLIENTE</h5>
-        <form #formCliente="ngForm" (ngSubmit)="salvarCliente(formCliente)">
+        <form materialize #formCliente="ngForm" (ngSubmit)="salvarCliente(formCliente)">
           <div class="row">
             <div class="input-field col s3">
-              <input [(ngModel)]="cliente.nome" name="nome" type="text" class="validate">
-              <label for="first_name">Nome</label>
+              <p class="tipCliente">Tipo cliente</p>
+              <p class="inputRadio" (click)="mudarPessoa('Pessoa Física')">
+                <input type="radio" class="with-gap" name="tipo_cliente" value="Pessoa Física" [(ngModel)]="cliente.tipo_cliente" />
+                <label for="nome">Pessoa Física</label>
+              </p>
+              <p class="inputRadio" (click)="mudarPessoa('Pessoa Jurídica')">
+                <input type="radio" class="with-gap" name="tipo_cliente" value="Pessoa Jurídica" [(ngModel)]="cliente.tipo_cliente" />
+                <label for="first_name">Pessoa Jurídica</label>
+              </p>
             </div>
-            <!-- <p>
-              <label>
-                <input class="with-gap" name="group1" [(ngModel)]="cliente.id_tipo_cliente" type="radio" />
-                <span>Pessoa física</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input class="with-gap" name="group1" [(ngModel)]="cliente.id_tipo_cliente" type="radio" />
-                <span>Pessoa jurídica</span>
-              </label>
-            </p> -->
-            <div class="input-field col s3">
-              <input name="cnh" [(ngModel)]="cliente.cnh" type="text" class="validate">
-              <label for="first_name">CNH</label>
+            <div class="input-field col s3" >
+                <input id="nome" [(ngModel)]="cliente.nome" name="nome" type="text" class="validate" placeholder="Nome">
+                <label for="nome">Nome</label>
             </div>
-            <div class="input-field col s3">
-              <input name="cpf" [(ngModel)]="cliente.cpf" type="text" class="validate">
-              <label for="first_name">CPF</label>
+            <div class="input-field col s3" *ngIf="cliente.tipo_cliente === 'Pessoa Física'" >
+              <input id="cnh" name="cnh" [(ngModel)]="cliente.cnh" type="text" class="validate" placeholder="Cnh">
+              <label for="cnh">CNH</label>
             </div>
-            <div class="input-field col s3">
-              <input name="cnpj" [(ngModel)]="cliente.cnpj" type="text" class="validate">
-              <label for="first_name">CNPJ</label>
+            <div class="input-field col s3" *ngIf="cliente.tipo_cliente === 'Pessoa Física'" >
+              <input id="cpf" name="cpf" [(ngModel)]="cliente.cpf" type="text" class="validate" placeholder="Cpf">
+              <label for="cpf">CPF</label>
+            </div>
+            <div class="input-field col s3" *ngIf="cliente.tipo_cliente === 'Pessoa Jurídica'" >
+              <input id="cnpj" name="cnpj" [(ngModel)]="cliente.cnpj" type="text" class="validate" placeholder="Cnpj">
+              <label for="cnpj">CNPJ</label>
             </div>
           </div>
           <div class="row">
@@ -39,16 +38,17 @@
                 <span class="card-title">Telefones</span>
               <div class="class card-content">
                 <form #formTelefone="ngForm" (ngSubmit)="salvarTelefone(formTelefone)">
-                  <div class="class col s10">
-                      <label for="first_name">Telefone</label>
+                  <div class="input-field col s10">
+                      <i class="material-icons prefix">phone</i>
                       <input name="telefone" ngModel type="text" class="validate">
+                      <label for="first_name">Telefone</label>
                     </div>
                     <div class="class col s2">
                       <br>
                         <button class="btn-floating  waves-effect waves-light #e65100 orange darken-4" type="submit"><i class="material-icons">add</i></button>
                     </div>
                   </form>
-                  <table class="striped" *ngIf="newTelefones.length > 0" >
+                  <table class="striped" *ngIf="newTelefones.length > 0 || telefones.length > 0" >
                     <thead>
                       <tr>
                         <th>Telefones</th>
@@ -61,6 +61,10 @@
                         <td>{{tel.telefone}}</td>
                         <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" (click)="deleteTelefone(i)"><i class="material-icons">delete</i></a></td>
                       </tr>
+                      <tr *ngFor="let telDb of telefones; index as i" >
+                        <td>{{telDb.telefone}}</td>
+                        <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" (click)="deleteTelefoneDb(telDb.telefone)"><i class="material-icons">delete</i></a></td>
+                      </tr>
                     </tbody>
                   </table>
               </div>
@@ -70,9 +74,10 @@
                 <span class="card-title">Emails</span>
               <div class="class card-content">
                   <form #formEmail="ngForm" (ngSubmit)="salvarEmail(formEmail)">
-                  <div class="class col s10">
-                      <label for="first_name">Email</label>
+                  <div class="input-field col s10">
+                      <i class="material-icons prefix">email</i>
                       <input name="email" ngModel type="email" class="validate">
+                      <label for="first_name">Email</label>
                   </div>
 
                   <div class="class col s2">
@@ -80,7 +85,7 @@
                       <button class="btn-floating  waves-effect waves-light #e65100 orange darken-4" type="submit"><i class="material-icons">add</i></button>
                   </div>
                 </form>
-                  <table class="striped" *ngIf="newEmails.length > 0" >
+                  <table class="striped" *ngIf="newEmails.length > 0 || emails.length > 0" >
                     <thead>
                       <tr>
                         <th>E-mails</th>
@@ -93,6 +98,10 @@
                         <td>{{email.email}}</td>
                         <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" (click)="deleteEmail(i)"><i class="material-icons">delete</i></a></td>
                       </tr>
+                      <tr *ngFor="let emailDb of emails; index as i" >
+                          <td>{{emailDb.email}}</td>
+                          <td><a class="btn-floating btn-small waves-effect waves-light #e65100 orange darken-4" (click)="deleteEmailDb(emailDb.email)"><i class="material-icons">delete</i></a></td>
+                        </tr>
                     </tbody>
                   </table>
               </div>

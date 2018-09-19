@@ -1,0 +1,28 @@
+p.tipCliente {
+    margin-top: -17px;
+    margin-bottom: -21px;
+}
+
+p.inputRadio {
+    cursor: pointer;
+}
+
+[type='radio']:checked + label:after, [type='radio'].with-gap:checked + label:before, [type='radio'].with-gap:checked + label:after {
+    border: 2px solid #e65100;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 2px solid #e65100;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 2px solid #e65100;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #e65100;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 2px solid #e65100;
+}
