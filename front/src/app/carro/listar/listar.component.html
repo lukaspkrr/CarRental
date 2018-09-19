@@ -1,3 +1,90 @@
-<p>
-  listar works!
-</p>
+<div class="container">
+  <div class="row">
+    <form class="col s12">
+      <button class="btn waves-effect waves-light #e65100 orange darken-4" [routerLink]="['/carro']" name="action">Voltar
+          <i class="material-icons left">arrow_back</i>
+        </button>
+      <div class="card-panel">
+        <h5>Detalhe do Carro</h5>
+
+        <div class="row">
+            <div class="col s12">
+              <div class="row">
+                <div class="input-field col s3">
+                  <label [ngClass]="{'active' : carro[0]?.renavam}" for="disabled">Renavam</label>
+                  <input [ngClass]="{'valid' : carro[0]?.renavam, 'invalid' : !carro[0]?.renavam}" [value]="carro[0]?.renavam"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.ano}" for="disabled">Ano</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.ano, 'invalid' : !carro[0]?.ano}" [value]="carro[0]?.ano"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.chassi}" for="disabled">Chassi</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.chassi, 'invalid' : !carro[0]?.chassi}" [value]="carro[0]?.chassi"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.combustivel}" for="disabled">Combustível</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.combustivel, 'invalid' : !carro[0]?.combustivel}" [value]="carro[0]?.combustivel"  id="disabled" type="text" class="validate">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s3">
+                  <label [ngClass]="{'active' : carro[0]?.cor}" for="disabled">Cor</label>
+                  <input  [ngClass]="{'valid' : carro[0]?.cor, 'invalid' : !carro[0]?.cor}" [value]="carro[0]?.cor"  id="disabled" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : true}" for="disabled">Status</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.cor}" *ngIf="carro[0]?.disponivel" value="Disponível"  id="disabled" type="text" class="validate">
+                    <input  [ngClass]="{'invalid' : !carro[0]?.cor}" *ngIf="!carro[0]?.disponivel" value="Indisponível"  id="disabled" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.lugares}" for="disabled">Quantidade de Lugares</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.lugares, 'invalid' : !carro[0]?.lugares}" [value]="carro[0]?.lugares"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.marca}" for="disabled">Marca</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.marca, 'invalid' : !carro[0]?.marca}" [value]="carro[0]?.marca"  id="disabled" type="text" class="validate">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="input-field col s3">
+                  <label [ngClass]="{'active' : carro[0]?.modelo}" for="disabled">Modelo</label>
+                  <input  [ngClass]="{'valid' : carro[0]?.modelo, 'invalid' : !carro[0]?.modelo}" [value]="carro[0]?.modelo"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.num_portas}" for="disabled">Número de portas</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.num_portas, 'invalid' : !carro[0]?.num_portas}" [value]="carro[0]?.num_portas"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.placa}" for="disabled">Placa</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.placa, 'invalid' : !carro[0]?.placa}" [value]="carro[0]?.placa"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.preco}" for="disabled">Preço</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.preco, 'invalid' : !carro[0]?.preco}" [value]="carro[0]?.preco"  id="disabled" type="text" class="validate">
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.tanque}" for="disabled">Tanque</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.renavam, 'invalid' : !carro[0]?.renavam}" [value]="carro[0]?.tanque"  id="disabled" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                    <label [ngClass]="{'active' : carro[0]?.transmissao}" for="disabled">Transmissão</label>
+                    <input  [ngClass]="{'valid' : carro[0]?.renavam, 'invalid' : !carro[0]?.renavam}" [value]="carro[0]?.transmissao"  id="disabled" type="text" class="validate">
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>
