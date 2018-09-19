@@ -9,6 +9,7 @@ import { ClienteComponent } from './cliente.component';
 const clienteRoutes: Routes = [
   { path: '', component: ClienteComponent },
   { path: 'cadastrar', component: CadastrarComponent },
+  { path: 'edit/:id', component: CadastrarComponent },
   { path: 'listar/:id', component: ListarComponent }
 ];
 

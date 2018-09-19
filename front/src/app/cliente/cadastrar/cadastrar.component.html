@@ -22,15 +22,15 @@
               </label>
             </p> -->
             <div class="input-field col s3">
-              <input [(ngModel)]="cliente.cnh" name="cnh" type="text" class="validate">
+              <input name="cnh" [(ngModel)]="cliente.cnh" type="text" class="validate">
               <label for="first_name">CNH</label>
             </div>
             <div class="input-field col s3">
-              <input [(ngModel)]="cliente.cpf" name="cpf" type="text" class="validate">
+              <input name="cpf" [(ngModel)]="cliente.cpf" type="text" class="validate">
               <label for="first_name">CPF</label>
             </div>
             <div class="input-field col s3">
-              <input [(ngModel)]="cliente.cnpj" name="cnpj" type="text" class="validate">
+              <input name="cnpj" [(ngModel)]="cliente.cnpj" type="text" class="validate">
               <label for="first_name">CNPJ</label>
             </div>
           </div>
@@ -55,7 +55,7 @@
                         <th>Deletar</th>
                       </tr>
                     </thead>
-    
+
                     <tbody>
                       <tr *ngFor="let tel of newTelefones; index as i" >
                         <td>{{tel.telefone}}</td>
@@ -87,7 +87,7 @@
                         <th>Deletar</th>
                       </tr>
                     </thead>
-    
+
                     <tbody>
                       <tr *ngFor="let email of newEmails; index as i" >
                         <td>{{email.email}}</td>
