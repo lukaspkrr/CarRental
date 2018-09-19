@@ -4,16 +4,16 @@
     color: black;
   }
   /* label focus color */
-  .input-field input[type=text]:focus + label {
+  .input-field input:focus + label {
     color: #e65100;
   }
   /* label underline focus color */
-  .input-field input[type=text]:focus {
+  .input-field input:focus {
     border-bottom: 1px solid #e65100;
     box-shadow: 0 1px 0 0 #e65100;
   }
   /* valid color */
-  .input-field input[type=text].valid {
+  .input-field input.valid {
     border-bottom: 1px solid #00b828;
     box-shadow: 0 1px 0 0 #00b828;
   }

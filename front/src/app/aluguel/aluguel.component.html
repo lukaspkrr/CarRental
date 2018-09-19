@@ -1,74 +1,22 @@
 <div class="carousel carousel-slider center" materialize="carousel">
-    <div class="carousel-item white-text" href="#one!">
-      <h2>Não é camaro</h2>
-      <div class="statusCarro">
-        <p class="white-text"><b class="statusTitle">Qtd. portas:</b> 4</p>
-        <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> Flex</p>
-        <p class="white-text"><b class="statusTitle">Tanque:</b> 45,5 L</p>
-        <p class="white-text"><b class="statusTitle">Qtd. de passageiros:</b> 5</p>
-        <p class="white-text"><b class="statusTitle">Transmissão:</b> Manual</p>
-      </div>
-      <img class="carros" src="../../assets/carro1-1.png">
-      <div class="carousel-fixed-item center">
-        <a class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2" [routerLink]="['alugar', 1]">Alugar</a>
-      </div>
+  <div class="carousel-item white-text">
+    <h2>{{veiculo.modelo}}</h2>
+    <div class="statusCarro">
+      <p class="white-text"><b class="statusTitle">Qtd. portas:</b> {{veiculo.num_portas}}</p>
+      <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> {{veiculo.combustivel}}</p>
+      <p class="white-text"><b class="statusTitle">Tanque:</b> {{veiculo.tanque}} L</p>
+      <p class="white-text"><b class="statusTitle">Lugares:</b> {{veiculo.lugares}}</p>
+      <p class="white-text"><b class="statusTitle">Transmissão:</b> {{veiculo.transmissao}}</p>
+      <h2>Diária: {{veiculo.valor | currency:'BRL':true}}</h2>
     </div>
-    <div class="carousel-item white-text" href="#two!">
-      <h2>Camaro branco</h2>
-      <div class="statusCarro">
-        <p class="white-text"><b class="statusTitle">Qtd. portas:</b> 2</p>
-        <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> Flex</p>
-        <p class="white-text"><b class="statusTitle">Tanque:</b> 50 L</p>
-        <p class="white-text"><b class="statusTitle">Qtd. de passageiros:</b> 3</p>
-        <p class="white-text"><b class="statusTitle">Transmissão:</b> Automático</p>
-      </div>
-      <img class="carros" src="../../assets/carro2-1.png">
-      <div class="carousel-fixed-item center">
-        <a class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2">Alugar</a>
-      </div>
+    <img class="carros" src="../../assets/{{veiculo.imagem}}.png">
+    <img *ngIf="!veiculo.disponivel"  class="indisponivel" src="../../assets/indisponivel.png">
+    <div class="carousel-fixed-item center">
+      <button class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2" 
+      [disabled]="!veiculo.disponivel"
+      (click)="alugar(veiculo.renavam)"
+      >Alugar</button>
     </div>
-    <div class="carousel-item white-text" href="#three!">
-      <h2>Camaro antigo</h2>
-      <div class="statusCarro">
-        <p class="white-text"><b class="statusTitle">Qtd. portas:</b> 2</p>
-        <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> Gasolina</p>
-        <p class="white-text"><b class="statusTitle">Tanque:</b> 30 L</p>
-        <p class="white-text"><b class="statusTitle">Qtd. de passageiros:</b> 5</p>
-        <p class="white-text"><b class="statusTitle">Transmissão:</b> Manual</p>
-      </div>
-      <img class="carros" src="../../assets/carro3-1.png">
-      <img class="indisponivel" src="../../assets/indisponivel.png">
-      <div class="carousel-fixed-item center">
-        <a class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2" disabled>Alugar</a>
-      </div>
-    </div>
-    <div class="carousel-item white-text" href="#four!">
-      <h2>Camaro preto</h2>
-      <div class="statusCarro">
-        <p class="white-text"><b class="statusTitle">Qtd. portas:</b> 2</p>
-        <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> Flex</p>
-        <p class="white-text"><b class="statusTitle">Tanque:</b> 60 L</p>
-        <p class="white-text"><b class="statusTitle">Qtd. de passageiros:</b> 2</p>
-        <p class="white-text"><b class="statusTitle">Transmissão:</b> Automático</p>
-      </div>
-      <img class="carros" src="../../assets/carro4-1.png">
-      <div class="carousel-fixed-item center">
-        <a class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2">Alugar</a>
-      </div>
-    </div>
-    <div class="carousel-item white-text" href="#fofiveur!">
-      <h2>Camaro do Munhoz</h2>
-      <div class="statusCarro">
-        <p class="white-text"><b class="statusTitle">Qtd. portas:</b> 2</p>
-        <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> Álcool</p>
-        <p class="white-text"><b class="statusTitle">Tanque:</b> 100 L</p>
-        <p class="white-text"><b class="statusTitle">Qtd. de passageiros:</b> 5</p>
-        <p class="white-text"><b class="statusTitle">Transmissão:</b> Manual</p>
-      </div>
-      <img class="carros" src="../../assets/carro6-1.png">
-      <div class="carousel-fixed-item center">
-        <a class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2">Alugar</a>
-      </div>
-    </div>
+  </div>
   </div>
   

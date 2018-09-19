@@ -7,11 +7,13 @@ import { ClienteComponent } from './cliente.component';
 import { ListarComponent } from './listar/listar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ClienteService } from './cliente.service';
+import { MaterializeModule } from 'angular2-materialize';
 
 @NgModule({
   imports: [
     CommonModule,
     ClienteRoutingModule,
+    MaterializeModule,
     FormsModule
   ],
   declarations: [

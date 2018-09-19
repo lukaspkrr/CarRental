@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AluguelComponent implements OnInit {
 
+  veiculo = [];
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
