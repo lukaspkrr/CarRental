@@ -8,7 +8,7 @@ import { AluguelService } from './aluguel.service';
 })
 export class AluguelComponent implements OnInit {
 
-  veiculo: any = [];
+  veiculos: any = [];
 
   constructor(
     private aluguelService: AluguelService
@@ -19,7 +19,7 @@ export class AluguelComponent implements OnInit {
     .subscribe(
       res => {
         console.log(res);
-        this.veiculo = res;
+        this.veiculos = res;
       },
       erro => console.error(erro)
     );

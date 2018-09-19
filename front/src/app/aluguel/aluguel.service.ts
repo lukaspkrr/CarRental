@@ -13,4 +13,20 @@ export class AluguelService {
     return this.http.get(`${LOCADORA_API}veiculo`);
   }
 
+  getPagamento() {
+    return this.http.get(`${LOCADORA_API}tipoPagamento`);
+  }
+
+  alugar(form) {
+    return this.http.post(`${LOCADORA_API}aluguel`, form);
+  }
+
+  alugados() {
+    return this.http.get(`${LOCADORA_API}aluguel`);
+  }
+
+  devolucao(form) {
+    return this.http.post(`${LOCADORA_API}devolucao`, form);
+  }
+
 }

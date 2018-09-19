@@ -7,6 +7,8 @@ import { MaterializeModule } from '../../../node_modules/angular2-materialize';
 import { FormsModule } from '@angular/forms';
 import { AluguelService } from './aluguel.service';
 import { ClienteService } from '../cliente/cliente.service';
+import { CarroService } from '../carro/carro.service';
+import { AlugadosComponent } from './alugados/alugados.component';
 
 @NgModule({
   imports: [
@@ -17,11 +19,13 @@ import { ClienteService } from '../cliente/cliente.service';
   ],
   declarations: [
     AluguelComponent,
-    AlugarComponent
+    AlugarComponent,
+    AlugadosComponent
   ],
   providers: [
     AluguelService,
-    ClienteService
+    ClienteService,
+    CarroService
   ]
 })
 export class AluguelModule { }
