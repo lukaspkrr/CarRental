@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route } from '@angular/compiler/src/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CarroService } from '../carro.service';
 
 @Component({
   selector: 'app-listar',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  constructor() { }
+  carro: any;
+  params: any;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private carroService: CarroService
+  ) { }
 
   ngOnInit() {
+  this.activatedRoute.params.subscribe(res => this.params = +res['id'] );
+  this.carroService.getCarrosId(this.params).subscribe(
+    res => {
+      this.carro = res,
+      console.log(this.carro);
+    },
+    error => {
+      console.log(error);
+    }
+  );
   }
 
 }

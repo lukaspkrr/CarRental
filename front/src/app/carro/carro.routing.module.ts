@@ -8,7 +8,7 @@ import { CarroComponent } from './carro.component';
 
 const CarroRoutes: Routes = [
   { path: '', component: CarroComponent },
-  { path: 'cadastrar', component: CadastrarComponent },
+  // { path: 'cadastrar', component: CadastrarComponent },
   { path: 'listar/:id', component: ListarComponent }
 ];
 

@@ -14,5 +14,12 @@ export class CarroService {
     return this.http.post(`${LOCADORA_API}registro_carro`, form);
   }
 
+  getCarros() {
+    return this.http.get(`${LOCADORA_API}veiculo`);
+  }
+  getCarrosId(renavam) {
+    return this.http.get(`${LOCADORA_API}veiculo/${renavam}`);
+  }
+
 
 }
