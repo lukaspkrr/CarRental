@@ -1,22 +1,47 @@
-<div class="carousel carousel-slider center" materialize="carousel">
-  <div class="carousel-item white-text">
-    <h2>{{veiculo.modelo}}</h2>
+<!-- <div class="carousel carousel-slider center" materialize="carousel">
+  <div class="carousel-item white-text" *ngFor="let veiculo of veiculos" >
+    <h2>{{veiculo?.modelo}}</h2>
     <div class="statusCarro">
-      <p class="white-text"><b class="statusTitle">Qtd. portas:</b> {{veiculo.num_portas}}</p>
-      <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> {{veiculo.combustivel}}</p>
-      <p class="white-text"><b class="statusTitle">Tanque:</b> {{veiculo.tanque}} L</p>
-      <p class="white-text"><b class="statusTitle">Lugares:</b> {{veiculo.lugares}}</p>
-      <p class="white-text"><b class="statusTitle">Transmissão:</b> {{veiculo.transmissao}}</p>
-      <h2>Diária: {{veiculo.valor | currency:'BRL':true}}</h2>
+      <p class="white-text"><b class="statusTitle">Qtd. portas:</b> {{veiculo?.num_portas}}</p>
+      <p class="white-text"><b class="statusTitle">Tipo de combustível:</b> {{veiculo?.combustivel}}</p>
+      <p class="white-text"><b class="statusTitle">Tanque:</b> {{veiculo?.tanque}} L</p>
+      <p class="white-text"><b class="statusTitle">Lugares:</b> {{veiculo?.lugares}}</p>
+      <p class="white-text"><b class="statusTitle">Transmissão:</b> {{veiculo?.transmissao}}</p>
+      <h2>Diária: {{veiculo?.valor | currency:'BRL':true}}</h2>
     </div>
-    <img class="carros" src="../../assets/{{veiculo.imagem}}.png">
-    <img *ngIf="!veiculo.disponivel"  class="indisponivel" src="../../assets/indisponivel.png">
+    <img class="carros" src="../../assets/{{veiculo?.imagem}}.png">
+    <img *ngIf="veiculo?.disponivel === 0"  class="indisponivel" src="../../assets/indisponivel.png">
     <div class="carousel-fixed-item center">
-      <button class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2" 
-      [disabled]="!veiculo.disponivel"
-      (click)="alugar(veiculo.renavam)"
+      <button class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2"
+      [disabled]="veiculo?.disponivel === 0"
+      (click)="alugar(veiculo?.renavam)"
       >Alugar</button>
     </div>
   </div>
-  </div>
-  
+  </div> -->
+
+  <div class="row">
+      <div class="col s3" *ngFor="let veiculo of veiculos" >
+        <div class="card">
+          <div class="card-image">
+            <img class="carros" src="../../assets/{{veiculo?.imagem}}.png">
+            <img *ngIf="veiculo?.disponivel === 0" class="indisponivel" src="../../assets/indisponivel.png">
+            <span class="card-title">{{veiculo?.modelo}}</span>
+          </div>
+          <div class="card-content">
+              <div class="statusCarro">
+                  <p><b class="statusTitle">Qtd. portas:</b> {{veiculo?.num_portas}}</p>
+                  <p><b class="statusTitle">Tipo de combustível:</b> {{veiculo?.combustivel}}</p>
+                  <p><b class="statusTitle">Tanque:</b> {{veiculo?.tanque}} L</p>
+                  <p><b class="statusTitle">Lugares:</b> {{veiculo?.lugares}}</p>
+                  <p><b class="statusTitle">Transmissão:</b> {{veiculo?.transmissao}}</p>
+                  <h4>Diária: {{veiculo?.preco | currency:'BRL':true}}</h4>
+                </div>
+          </div>
+          <div class="card-action">
+            <button class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2" [disabled]="veiculo?.disponivel === 0" [routerLink]="['alugar', veiculo?.renavam]">Alugar</button>
+            <button *ngIf="veiculo?.disponivel === 0"  class="btn waves-effect #e65100 orange darken-4 white-text darken-text-2" [routerLink]="['alugados']">Devolução</button>
+          </div>
+        </div>
+      </div>
+    </div>

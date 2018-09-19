@@ -1,35 +1,49 @@
-div.carousel.carousel-slider.center
-div.carousel-item.white-text
-img.carros {
-    width: 40%;
-    margin-top: -20px;
-    margin-left: 20%;
+// div.carousel.carousel-slider.center
+// div.carousel-item.white-text
+// img.carros {
+//     width: 40%;
+//     margin-top: -20px;
+//     margin-left: 20%;
+// }
+
+// div.carousel.carousel-slider.center
+// div.carousel-item.white-text
+// img.indisponivel {
+//     position: absolute;
+//     width: 40%;
+//     margin-top: -20px;
+//     margin-left: -40%;
+// }
+
+div.card-image img.indisponivel {
+  position: absolute !important;
 }
 
-div.carousel.carousel-slider.center
-div.carousel-item.white-text
-img.indisponivel {
-    position: absolute;
-    width: 40%;
-    margin-top: -20px;
-    margin-left: -40%;
+div.card-image {
+  background-color: rgb(182, 182, 182);
 }
 
-div.carousel.carousel-slider.center
-div.carousel-item.white-text
-div.statusCarro {
-    border: solid 1px #e65100;
-    padding: 0px 10px 0px 10px;
-    border-radius: 5%;
-    box-shadow: 2px 2px 40px #e65100;
-    position: fixed;
-    margin-left: 20%;
-    text-align: left;
+div.card-image
+span.card-title {
+  padding: 2px;
+  background-color: black;
+  color: #e65100;
 }
+// div.carousel.carousel-slider.center
+// div.carousel-item.white-text
+// div.statusCarro {
+//     border: solid 1px #e65100;
+//     padding: 0px 10px 0px 10px;
+//     border-radius: 5%;
+//     box-shadow: 2px 2px 40px #e65100;
+//     position: fixed;
+//     margin-left: 20%;
+//     text-align: left;
+// }
 
-div.carousel.carousel-slider.center
-div.carousel-item.white-text
-div.statusCarro
-b.statusTitle {
-    color: #e65100;
-}
+// div.carousel.carousel-slider.center
+// div.carousel-item.white-text
+// div.statusCarro
+// b.statusTitle {
+//     color: #e65100;
+// }

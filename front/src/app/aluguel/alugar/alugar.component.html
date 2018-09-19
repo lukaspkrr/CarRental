@@ -5,31 +5,26 @@
         <form #formAluguel="ngForm" (ngSubmit)="alugar(formAluguel)">
           <div class="row">
             <div class="input-field col s3">
-                <select [(ngModel)]="aluguel.id_cliente" materialize="material_select">
-                  <option value="" disabled selected>Selecione o cliente</option>
-                  <option *ngFor="let option of clientes" [value]="option.cpf">{{option.nome}}</option>
+              <select name="id_cliente" [(ngModel)]="aluguel.id_cliente" materialize="material_select">
+                <option value="" disabled selected>Selecione o cliente</option>
+                <option *ngFor="let option of clientes" [value]="option.id_cliente">{{option.nome}}</option>
+              </select>
+            </div>
+            <div class="input-field col s3">
+                <select name="id_tipo_pag" [(ngModel)]="aluguel.id_tipo_pag" materialize="material_select">
+                  <option value="" disabled selected>Selecione o tipo de pagamento</option>
+                  <option *ngFor="let option of pagamento" [value]="option.id_tipo_pag">{{option.tipo_pag}}</option>
                 </select>
-              </div>
-            <div class="input-field col s3">
-              <input [(ngModel)]="aluguel.modelo" name="modelo" id="first_name" type="text" class="validate">
-              <label for="first_name">Modelo</label>
             </div>
             <div class="input-field col s3">
-              <input [(ngModel)]="aluguel.placa" name="placa" id="last_name" type="text" class="validate">
-              <label for="last_name">Placa</label>
-            </div>
-            <div class="input-field col s3">
-              <input [(ngModel)]="aluguel.ano" name="ano" id="first_name" type="text" class="validate">
-              <label for="first_name">Ano</label>
-            </div>
-            <div>
-              <div class="input-field col s3">
-                <input [(ngModel)]="aluguel.renavam" name="renavam" id="first_name" type="text" class="validate">
-                <label for="first_name">Renavam</label>
-              </div>
+                <label for="first_name">Quatidade de dias</label>
+                <p class="range-field">
+                    <input type="range" id="test5" name="dias" min="0" max="100" [(ngModel)]="aluguel.dias" (ngModelChange)="dias($event)" />
+                  </p>
             </div>
           </div>
-
+          <h5 class="black-text">Valor compra: {{valorCarro | currency:'BRL':true}} * {{aluguel.dias}} dias</h5>
+          <h3 class="black-text">Valor total: {{valorAluguel | currency:'BRL':true}}</h3>
           <div class="row">
             <button class="btn waves-effect waves-light #e65100 orange darken-4 right" type="submit" name="action">Fechar aluguel<i class="material-icons right">attach_money</i>
             </button>
