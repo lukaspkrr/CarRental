@@ -92,6 +92,8 @@ export class CadastrarComponent implements OnInit {
   }
 
   salvarCliente(form: NgForm) {
+    form.value.cnpj || (form.value.cnpj = null); 
+    form.value.cpf || (form.value.cpf = null); 
     if (this.params) {
       this.clienteService.alteraCliente(this.params, form.value)
       .subscribe(
